@@ -53,33 +53,40 @@ master.merge({
 });
 
 // Branch 4
-// const feature4 = master.branch("feature4");
-// feature4.commit("Add login fields");
+master.commit("Add header");
 
-// Branch 5 (rebasing)
-const feature5 = master.branch("feature/user-menu");
-feature5.commit("Add user menu");
+const feature4 = master.branch("feature4");
+feature4.commit("Add login fields");
+
+master.merge({
+    branch: feature4,
+    fastForward: false
+});
+
+// // without rebasing
+// const feature5 = master.branch("feature/user-menu");
+// feature5.commit("Add user menu");
 
 
-const feature6 = master.branch("feature/breadcrumbs");
-feature6.commit("Add breadcrumbs");
-master.merge(feature6);
+// const feature6 = master.branch("feature/breadcrumbs");
+// feature6.commit("Add breadcrumbs");
+// master.merge(feature6);
 
-feature5.commit("Style user menu");
+// feature5.commit("Style user menu");
 
-const feature8 = master.branch("feature/footer");
-feature8.commit("Fix footer layout");
+// const feature8 = master.branch("feature/footer");
+// feature8.commit("Fix footer layout");
 
-feature5.commit("Add logout option to user menu");
+// feature5.commit("Add logout option to user menu");
 
-const feature7 = master.branch("feature/search-box");
-feature7.commit("Add search box");
+// const feature7 = master.branch("feature/search-box");
+// feature7.commit("Add search box");
 
-master.merge(feature8);
+// master.merge(feature8);
 
-feature5.commit("Implement logout");
-master.merge(feature5);
-master.merge(feature7);
+// feature5.commit("Implement logout");
+// master.merge(feature5);
+// master.merge(feature7);
 
 },{"@gitgraph/js":18}],2:[function(require,module,exports){
 "use strict";
